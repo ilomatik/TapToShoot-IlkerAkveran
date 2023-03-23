@@ -7,7 +7,7 @@ namespace Projectile
     {
         [SerializeField] private float explosionRange;
         [SerializeField] private float explosionPower;
-
+        
         protected override void OnHit()
         {
             if (hitParticle != null)

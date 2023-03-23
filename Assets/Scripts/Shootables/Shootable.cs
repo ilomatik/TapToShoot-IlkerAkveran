@@ -10,7 +10,7 @@ namespace Shootables
         
         internal void DestroyShootable()
         {
-            transform.DOScale(Vector3.zero, 10f).OnComplete(() =>
+            transform.DOScale(Vector3.zero, 1f).OnComplete(() =>
             {
                 onDestroyShootable.Raise();
                 Destroy(gameObject);

@@ -92,7 +92,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4681032800663202537}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -126,6 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onHitShootable: {fileID: 11400000, guid: 557a3b02622bcd44b811cbdfbf93b9a1, type: 2}
-  onDestroyShootable: {fileID: 11400000, guid: f9ea6eb43990e124b8a3f77ac6712b72, type: 2}
   hitParticle: {fileID: 0}
   movementSpeed: 5
