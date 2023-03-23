@@ -18,7 +18,7 @@ namespace Shootables
 
         public void SetShootableColorRandom()
         {
-            shootableMaterial.color = shootableColors[Random.Range(0, shootableColors.Count - 1)];
+            shootableMaterial.color = shootableColors[Random.Range(0, shootableColors.Count)];
         }
     }
 }

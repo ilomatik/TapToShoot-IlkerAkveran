@@ -7,6 +7,7 @@ namespace Projectile
         public override void OnHit()
         {
             Debug.Log("Projectile Bullet OnHit is working");
+            onHitShootable.Raise();
         }
     }
 }

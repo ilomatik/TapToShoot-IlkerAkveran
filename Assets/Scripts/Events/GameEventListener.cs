@@ -7,6 +7,7 @@ namespace Events
     {
         public GameEvent Event;
         public UnityEvent Response;
+        public UnityEvent<Vector3> ResponsePosition;
 
         private void OnEnable()
         {
@@ -21,6 +22,11 @@ namespace Events
         public void OnEventRaised()
         {
             Response.Invoke();
+        }
+
+        public void OnEventRaisedPosition(Vector3 position)
+        {
+            ResponsePosition.Invoke(position);
         }
     }
 }
