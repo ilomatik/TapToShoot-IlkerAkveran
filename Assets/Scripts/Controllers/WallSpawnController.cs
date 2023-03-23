@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Events;
 using Shootables;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace Controllers
 {
     public class WallSpawnController : MonoBehaviour
     {
+        [SerializeField] private GameEvent onLevelComplete;
         [SerializeField] private List<GameObject> wallObjects;
         [SerializeField] private int row;
         [SerializeField] private int column;
@@ -26,8 +28,6 @@ namespace Controllers
                     Instantiate(PickRandomObject(), spawnPosition, Quaternion.identity, transform);
                 }
             }
-            
-            
         }
 
         private GameObject PickRandomObject()
@@ -50,6 +50,7 @@ namespace Controllers
             if (shootableAmount <= 0)
             {
                 Debug.Log("Game over");
+                onLevelComplete.Raise();
             }
         }
     }

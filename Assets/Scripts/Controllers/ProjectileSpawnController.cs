@@ -42,14 +42,14 @@ namespace Controllers
             }
         }
 
-        public static Bullet GetBullet()
+        public static ProjectileBase GetBullet()
         {
             return bulletPool
                 .SelectMany(bullet => bulletPool.Where(bulletObject => !bulletObject.gameObject.activeInHierarchy))
                 .FirstOrDefault();
         }
 
-        public static Bomb GetBomb()
+        public static ProjectileBase GetBomb()
         {
             return bombPool
                 .SelectMany(bomb => bombPool.Where(bombObject => !bombObject.gameObject.activeInHierarchy))

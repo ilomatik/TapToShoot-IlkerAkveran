@@ -4,10 +4,12 @@ namespace Projectile
 {
     public class Bullet : ProjectileBase
     {
-        public override void OnHit()
+        protected override void OnHit()
         {
-            Debug.Log("Projectile Bullet OnHit is working");
-            onHitShootable.Raise();
+            if (hitParticle != null)
+            {
+                Instantiate(hitParticle, transform.position, Quaternion.identity);
+            }
         }
     }
 }

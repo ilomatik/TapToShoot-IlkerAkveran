@@ -1,13 +1,35 @@
-﻿using UnityEngine;
+﻿using Shootables;
+using UnityEngine;
 
 namespace Projectile
 {
     public class Bomb : ProjectileBase
     {
-        public override void OnHit()
+        [SerializeField] private float explosionRange;
+        [SerializeField] private float explosionPower;
+
+        protected override void OnHit()
         {
-            Debug.Log("Projectile Bomb OnHit is working");
-            onHitShootable.Raise();
+            if (hitParticle != null)
+            {
+                Instantiate(hitParticle, transform.position, Quaternion.identity);
+            }
+
+            Vector3 explosionPosition = transform.position;
+            var colliders = Physics.OverlapSphere(explosionPosition, explosionRange);
+
+            foreach (Collider col in colliders)
+            {
+                var rigidBody = col.GetComponent<Rigidbody>();
+                var shootable = col.GetComponent<Shootable>();
+
+                if (rigidBody != null && shootable != null)
+                {
+                    rigidBody.AddExplosionForce(explosionPower, explosionPosition, explosionRange);
+                    shootable.DestroyShootable();
+                }
+            }
+            
         }
     }
 }
