@@ -6,9 +6,15 @@ namespace Shootables
 {
     public class Shootable : MonoBehaviour
     {
-        public GameEvent onDestroyShootable;
-        public GameObject destroyParticle;
-        
+        #region Variables
+
+        [SerializeField] private GameEvent onDestroyShootable;
+        [SerializeField] private GameObject destroyParticle;
+
+        #endregion
+
+        #region Custom Functions
+
         internal void DestroyShootable()
         {
             onDestroyShootable.Raise();
@@ -22,5 +28,7 @@ namespace Shootables
                 Destroy(gameObject);
             });
         }
+        
+        #endregion
     }
 }

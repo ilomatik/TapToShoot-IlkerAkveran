@@ -7,18 +7,21 @@ namespace Managers
 {
     public class InputManager : MonoBehaviour
     {
+        #region Variables
+
         private Ray ray;
-        private int touchCount = 0;
+        private int touchCount;
+        
+        #endregion
+
+        #region Unity Functions
 
         private void Update()
         {
-            if (!GameManager.isGameOn) return;
+            if (!GameManager.IsGameOn) return;
             if (!Input.GetMouseButtonDown(0)) return;
-
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (!Physics.Raycast(ray, out hit)) return;
+            if (Camera.main != null) ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (!Physics.Raycast(ray, out RaycastHit hit)) return;
             if (!hit.transform.CompareTag("Shootable")) return;
 
             touchCount++;
@@ -31,5 +34,7 @@ namespace Managers
             bullet.SetTarget(hit.transform.gameObject.GetComponent<Shootable>());
             bullet.SetActive(true);
         }
+
+        #endregion
     }
 }

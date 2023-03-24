@@ -4,21 +4,33 @@ namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
+        #region Variables
+
         [SerializeField] private int targetFrame = 30;
 
-        public static bool isGameOn;
-        
+        public static bool IsGameOn;
+
+        #endregion
+
+        #region Unity Functions
+
         private void Start()
         {
             Application.targetFrameRate = targetFrame;
             SpawnManager.Instance.SpawnWall();
             SpawnManager.Instance.SpawnProjectilePools();
-            isGameOn = true;
+            IsGameOn = true;
         }
+
+        #endregion
+
+        #region Custom Functions
 
         public void FinishGame()
         {
-            isGameOn = false;
+            IsGameOn = false;
         }
+
+        #endregion
     }
 }

@@ -6,13 +6,19 @@ namespace Projectile
 {
     public abstract class ProjectileBase : MonoBehaviour
     {
+        #region Variables
+
         public GameEvent onHitShootable;
         public GameObject hitParticle;
         public float movementSpeed;
 
         private Vector3 targetPosition;
         private Shootable targetObject;
-        
+
+        #endregion
+
+        #region Unity Functions
+
         private void Update()
         {
             if (!gameObject.activeSelf) return;
@@ -27,6 +33,10 @@ namespace Projectile
             OnHit();
         }
 
+        #endregion
+
+        #region Custom Functions
+
         public void SetTarget(Shootable target)
         {
             targetObject = target;
@@ -40,5 +50,7 @@ namespace Projectile
         }
 
         protected abstract void OnHit();
+
+        #endregion
     }
 }

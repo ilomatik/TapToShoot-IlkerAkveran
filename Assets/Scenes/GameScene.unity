@@ -926,10 +926,10 @@ MonoBehaviour:
   wallObjects:
   - {fileID: 1628140707160789711, guid: c5c7a2e94cc350e409d037595e0c9cc5, type: 3}
   - {fileID: 6448200487002617399, guid: f6d9ee24ac8e79d4b8ecee63cb528eea, type: 3}
-  row: 3
-  column: 3
+  row: 5
+  column: 5
   gridSpacingOffset: 1.1
-  gridOrigin: {x: -1, y: 0, z: 0}
+  gridOrigin: {x: 0, y: 0, z: 0}
 --- !u!4 &1486174523
 Transform:
   m_ObjectHideFlags: 0
@@ -1128,6 +1128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1813494986}
   - component: {fileID: 1813494987}
+  - component: {fileID: 1813494988}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1162,3 +1163,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetFrame: 60
+--- !u!114 &1813494988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813494985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289dcaa163504d93a3ad09b58b60373d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 737ea71a898482743b20187eb978bdd2, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1813494987}
+        m_TargetAssemblyTypeName: Managers.GameManager, Assembly-CSharp
+        m_MethodName: FinishGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

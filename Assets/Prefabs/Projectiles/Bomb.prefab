@@ -113,7 +113,7 @@ MonoBehaviour:
   hitParticle: {fileID: 1573430751113452, guid: 0f22b44ec7df41a49adb3c3269118434, type: 3}
   movementSpeed: 5
   explosionRange: 5
-  explosionPower: 500
+  explosionPower: 250
 --- !u!54 &8482182420940037538
 Rigidbody:
   m_ObjectHideFlags: 0

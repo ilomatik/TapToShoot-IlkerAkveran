@@ -7,19 +7,26 @@ namespace Controllers
 {
     public class WallSpawnController : MonoBehaviour
     {
+        #region Variables
+
         [SerializeField] private GameEvent onLevelComplete;
         [SerializeField] private List<GameObject> wallObjects;
         [SerializeField] private int row;
         [SerializeField] private int column;
         [SerializeField] private float gridSpacingOffset = 1.1f;
-        [SerializeField] private Vector3 gridOrigin = Vector3.zero;
+        [SerializeField] private Vector3 gridOrigin;
 
-        //private List<GameObject> shootables = new List<GameObject>();
         private int shootableAmount;
 
+        #endregion
+
+        #region Custom Functions
+        
         //TODO: set grid origin by number of rows and columns
         internal void SpawnCubeWall()
         {
+            gridOrigin = new Vector3(-0.4f * row, -0.4f * column, 0f);
+            
             for (var i = 0; i < row; i++)
             {
                 for (var j = 0; j < column; j++)
@@ -36,7 +43,6 @@ namespace Controllers
 
             if (wallObj.GetComponent<Shootable>())
             {
-                //shootables.Add(wallObj);
                 shootableAmount++;
             }
             
@@ -49,9 +55,10 @@ namespace Controllers
 
             if (shootableAmount <= 0)
             {
-                Debug.Log("Game over");
                 onLevelComplete.Raise();
             }
         }
+
+        #endregion
     }
 }
