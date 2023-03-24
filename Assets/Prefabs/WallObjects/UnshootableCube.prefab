@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6448200487002617397}
   - component: {fileID: 6448200487002617396}
   - component: {fileID: 2905169016163618981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UnshootableCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
