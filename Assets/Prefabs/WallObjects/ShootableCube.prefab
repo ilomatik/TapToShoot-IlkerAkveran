@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDestroyShootable: {fileID: 11400000, guid: f9ea6eb43990e124b8a3f77ac6712b72, type: 2}
+  destroyParticle: {fileID: 165672, guid: 146d2ff25be0f824fa285b16b2915ff3, type: 3}
 --- !u!114 &1628140707160789704
 MonoBehaviour:
   m_ObjectHideFlags: 0

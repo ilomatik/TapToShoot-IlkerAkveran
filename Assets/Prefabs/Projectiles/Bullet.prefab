@@ -126,5 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onHitShootable: {fileID: 11400000, guid: 557a3b02622bcd44b811cbdfbf93b9a1, type: 2}
-  hitParticle: {fileID: 0}
+  hitParticle: {fileID: 195742, guid: c83fb3ef04bb383408bb2064b89690b2, type: 3}
   movementSpeed: 5
